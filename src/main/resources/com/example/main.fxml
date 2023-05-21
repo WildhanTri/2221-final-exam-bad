@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="856.0" prefWidth="872.0" style="-fx-background-color: #fcfcfc;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.MainController">
+   <children>
+      <Pane layoutY="125.0" prefHeight="132.0" prefWidth="874.0" style="-fx-background-color: #ff999a;">
+         <children>
+            <Text layoutX="20.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID Sewa" wrappingWidth="84.60498046875" />
+            <Text layoutX="20.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID Customer" wrappingWidth="84.60498046875" />
+            <Text layoutX="20.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID Karyawan" wrappingWidth="84.60498046875" />
+            <TextField fx:id="txfIdCustomer" layoutX="107.0" layoutY="55.0" />
+            <TextField fx:id="txfIdSewa" layoutX="107.0" layoutY="22.0" />
+            <TextField fx:id="txfIdKaryawan" layoutX="107.0" layoutY="88.0" />
+            <Button fx:id="btnViewCustomerName" layoutX="306.0" layoutY="56.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="161.0" text="View Customer Name" />
+            <Button fx:id="btnViewKaryawanName" layoutX="306.0" layoutY="87.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="161.0" text="View Karyawan Name" />
+            <TextField fx:id="txfViewCustomerName" editable="false" layoutX="480.0" layoutY="55.0" prefHeight="26.0" prefWidth="154.0" />
+            <TextField fx:id="txfViewKaryawanName" editable="false" layoutX="479.0" layoutY="88.0" prefHeight="26.0" prefWidth="156.0" />
+            <Text fx:id="txtViewCustomerNameError" fill="RED" layoutX="643.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="217.86837809200847" />
+            <Text fx:id="txtViewKaryawanNameError" fill="RED" layoutX="644.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="217.86837809200847" />
+         </children>
+      </Pane>
+      <Pane layoutX="-3.0" layoutY="277.0" prefHeight="92.0" prefWidth="875.0" style="-fx-background-color: #f0f0f0;">
+         <children>
+            <Text layoutX="36.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kode Buku" />
+            <ComboBox fx:id="cmbKodeBuku" layoutX="34.0" layoutY="40.0" prefHeight="26.0" prefWidth="117.0" />
+            <Text layoutX="169.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nama Buku" />
+            <Text layoutX="300.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tgl Peminjaman" />
+            <Text layoutX="433.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tgl Pengembalian" />
+            <Text layoutX="572.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Harga" />
+            <Button fx:id="btnTambahItem" layoutX="672.0" layoutY="40.0" mnemonicParsing="false" text="Tambah Item" />
+            <Button fx:id="btnHapusItem" layoutX="771.0" layoutY="41.0" mnemonicParsing="false" text="Hapus Item" />
+            <TextField fx:id="txfNamaBuku" editable="false" layoutX="170.0" layoutY="40.0" prefHeight="26.0" prefWidth="109.0" />
+            <TextField fx:id="txfTglPeminjaman" editable="false" layoutX="299.0" layoutY="40.0" prefHeight="26.0" prefWidth="109.0" />
+            <TextField fx:id="txfTglPengembalian" editable="false" layoutX="432.0" layoutY="41.0" prefHeight="26.0" prefWidth="109.0" />
+            <TextField fx:id="txfHarga" editable="false" layoutX="572.0" layoutY="40.0" prefHeight="26.0" prefWidth="82.0" />
+         </children>
+      </Pane>
+      <Text layoutX="377.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Detail Order">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <TableView fx:id="tbvDetailOrder" layoutX="133.0" layoutY="488.0" prefHeight="200.0" prefWidth="615.0">
+        <columns>
+          <TableColumn fx:id="tbcKodeBuku" prefWidth="91.18072509765625" text="Kode Buku" />
+          <TableColumn fx:id="tbcNamaBuku" prefWidth="144.31932067871094" text="Nama Buku" />
+            <TableColumn fx:id="tbcTglPeminjaman" prefWidth="114.28164672851562" text="Tgl Peminjaman" />
+            <TableColumn fx:id="tbcTglPengembalian" prefWidth="125.947998046875" text="Tgl Pengembalian" />
+            <TableColumn fx:id="tbcHarga" prefWidth="139.24844360351562" text="Harga" />
+        </columns>
+      </TableView>
+      <Text layoutX="502.0" layoutY="748.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bayar" />
+      <Text layoutX="501.0" layoutY="783.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kembalian" />
+      <TextField fx:id="txfBayar" layoutX="585.0" layoutY="731.0" prefHeight="26.0" prefWidth="133.0" />
+      <TextField fx:id="txfKembalian" editable="false" layoutX="586.0" layoutY="765.0" prefHeight="26.0" prefWidth="133.0" />
+      <Button fx:id="btnSimpan" layoutX="736.0" layoutY="731.0" mnemonicParsing="false" text="Simpan" />
+      <Button fx:id="btnExit" layoutX="737.0" layoutY="765.0" mnemonicParsing="false" text="Exit" />
+      <Text layoutX="11.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="COMIC ZONE" wrappingWidth="280.831763903994">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <Text fx:id="txtGrandTotal" layoutX="577.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rp. 0" textAlignment="CENTER" wrappingWidth="280.831763903994">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="499.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rental" wrappingWidth="355.87003294696274">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+   </children>
+</Pane>
